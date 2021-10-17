@@ -34,7 +34,7 @@ class ArrayList {
         ArrayList<T> operator--(int);
   
         void operator+=(T); 
-        void operator+=(ArrayList<T> &);
+        void operator+=(const ArrayList<T> &);
   
         ArrayList<T> operator*(T) const; 
         ArrayList<T> operator/(T) const;
