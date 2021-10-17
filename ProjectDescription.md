@@ -42,7 +42,7 @@ c = a + b; // c == [3, 3]
   - **Should modify the calling object**
   - For example: 
 ```
-ArrayList a(2,1), b;  // a == [1,1]
+ArrayList<int> a(2,1), b;  // a == [1,1]
 a[1] = 2;             // a == [1,2]
 b = --a;        
 b.print();            // b == [1]
@@ -54,16 +54,45 @@ a.print();            // a == [1]
   - **Should modify the calling object**
   - For example: 
 ```
-ArrayList a(2,1), b;  // a == [1,1]
+ArrayList<int> a(2,1), b;  // a == [1,1]
 a[1] = 2;             // a == [1,2]
 b = a--;        
 b.print();            // b == [1,2]
 a.print();            // a == [1]
-``
-- `void operator+=(T)`                                  - 5 points
-- `void operator+=(ArrayList<T> &)`                     - 5 points
-- `ArrayList<T> operator*(T) const`                     - 5 points
-- `ArrayList<T> operator/(T) const`                     - 5 points
+```
+- `void operator+=(T)`                                  
+  - Appends an element on to the end of the `data` array. 
+  - **Should modify the calling object**
+  - For example: 
+```
+ArrayList<int> a(2,1);  // a == [1,1]
+a += 2;                 // a == [1,1,2]
+```
+- `void operator+=(const ArrayList<T> &)`                     
+  - Appends the values of the ArrayList passed to the end of the calling object object's data. 
+  - **Should modify the calling object**
+  - For example: 
+```
+ArrayList<int> a(2,1), b(2,2);  // a == [1,1] b == [2,2]
+a += b;                         // a == [1,1,2,2]
+```
+- `ArrayList<T> operator*(int) const`                     
+  - We are going to get inventive here too! The `*` operator should take in an `int` and return an object that has the calling object's `data` array duplicated that many times
+  - **Should not modify the calling object**
+  - For example: 
+```
+ArrayList<int> a(2,1), c;     // a == [1,1]
+c = a*2;                      // c == [1,1,1,1]
+```
+- `ArrayList<T> operator/(int) const`                
+  - This one will be a little different as well. It will also take in an `int` and return an object that has the corresponding fraction (dictated by the `int` passed in) of the calling object's `data` array. 
+  - If the size is not divisible by the `int` passed in, then you should truncate the new size (5/2 == 2). 
+  - **Should not modify the calling object**
+  - For example: 
+```
+ArrayList<int> a(5,1), c;     // a == [1,1,1,1,1]
+c = a/2;                      // c == [1,1] (the first 2 elements of a)
+```
 
 ## Compiling and Running your Code
 With Google Test
