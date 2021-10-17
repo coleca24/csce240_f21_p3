@@ -2,15 +2,12 @@
 #define ARRAYLIST_
 #include <iostream>
 using std::ostream;
-using std::istream; 
 
 template <class T>
 class ArrayList {
        template <class U>
        friend ostream& operator<<(ostream&, ArrayList<U>);
   
-       template <class U> 
-       friend istream& operator>>(istream&, ArrayList<U>); 
  public:
         ArrayList();
         explicit ArrayList(int size, T val = 0);
