@@ -1,0 +1,31 @@
+name: Unit Test
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+    
+    - uses: actions/checkout@v2
+    
+    - name: Configure
+      run: |
+        cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Debug
+    - name: Build
+      run: |
+        cmake --build build --config Debug
+    - name: Test
+      run: |
+        cd build
+        ./proj3
+    - name: valgrind
+      run: |
+        sudo apt install -y valgrind
+        cd build
+        valgrind ./proj3
