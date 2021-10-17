@@ -9,13 +9,13 @@ int main(int argc, char **argv) {
   std::cout << "Your output: \n";
   bool test = (a != b); 
   std::cout << test << "\n"; 
-  std::cout << "Correct output: \ntrue\n";
+  std::cout << "Correct output: \n1\n";
   
   std::cout << "----\nTesting operator!= \n";
   std::cout << "Your output: \n";
-  bool test = (a != a); 
+  test = (a != a); 
   std::cout << test << "\n"; 
-  std::cout << "Correct output: \nfalse\n";
+  std::cout << "Correct output: \n0\n";
   
   // ------------Testing Operator+(T)-----------------
   ArrayList<int> c(2,1), c_ret; 

@@ -1,4 +1,4 @@
-include "./ArrayList.h"
+#include "./ArrayList.h"
   
 template <class U>
 ostream& operator<<(ostream & os, ArrayList<U> a) {
@@ -13,13 +13,13 @@ ostream& operator<<(ostream & os, ArrayList<U> a) {
 template <class T>
 ArrayList<T>::ArrayList() {
     size = 0;
-    data = new int[size];
+    data = new T[size];
 }
 
 template <class T>
-ArrayList<T>::ArrayList(int size, int val) {
+ArrayList<T>::ArrayList(int size, T val) {
     this->size = size;
-    data = new int[size];
+    data = new T[size];
     for (int i = 0; i <size; i++) {
         data[i] = val;
     }
@@ -28,7 +28,7 @@ ArrayList<T>::ArrayList(int size, int val) {
 template <class T>
 ArrayList<T>::ArrayList(const ArrayList<T> & copy) {
     setSize(copy.getSize());
-    data = new int[size];
+    data = new T[size];
     for (int i = 0; i < size; i++) {
         data[i] = copy[i];
     }
@@ -55,7 +55,7 @@ int ArrayList<T>::getSize() const {
 }
 
 template <class T>
-int ArrayList<T>::getData(int index) const {
+T ArrayList<T>::getData(int index) const {
     if (index >= 0 && index < size) {
         return data[index];
     } else {
@@ -65,7 +65,7 @@ int ArrayList<T>::getData(int index) const {
 }
 
 template <class T>
-int ArrayList<T>::operator[](int index) const {
+T ArrayList<T>::operator[](int index) const {
     if (index >= 0 && index < size) {
         return data[index];
     } else {
@@ -75,15 +75,15 @@ int ArrayList<T>::operator[](int index) const {
 }
 
 template <class T>
-int& ArrayList<T>::operator[](int index) {
+T& ArrayList<T>::operator[](int index) {
     return data[index];
 }
 
 template <class T>
-const ArrayList<T> & ArrayList<T>::operator=(const ArrayList<T> & rhs) {
+const ArrayList<T> & ArrayList<T>::operator=(const ArrayList<T> rhs) {
     size = rhs.getSize();
     delete [] data;
-    data = new int[size];
+    data = new T[size];
     for (int i = 0; i < size; i++) {
         data[i] = rhs[i];
     }
@@ -100,4 +100,47 @@ void ArrayList<T>::print() const {
 
 // Start of new functions
 
+template <class T>
+bool ArrayList<T>::operator!=(const ArrayList<T> & rhs) const {
+	return false;
+}
 
+template <class T>
+ArrayList<T> ArrayList<T>::operator+(T val) const {
+	return *this;
+}
+
+template <class T>
+ArrayList<T> ArrayList<T>::operator+(const ArrayList<T> & rhs) const {
+	return *this;
+}
+  
+template <class T>
+ArrayList<T> & ArrayList<T>::operator--() {
+	return *this;
+}
+
+template <class T>
+ArrayList<T> ArrayList<T>::operator--(int) {
+	return *this;
+}
+  
+template <class T>
+void ArrayList<T>::operator+=(T val) {
+	return;
+}
+
+template <class T>
+void ArrayList<T>::operator+=(const ArrayList<T> & rhs) {
+	return;
+}
+
+template <class T>  
+ArrayList<T> ArrayList<T>::operator*(int val) const {
+	return *this;
+}
+
+template <class T>
+ArrayList<T> ArrayList<T>::operator/(int val) const {
+	return *this;
+}
