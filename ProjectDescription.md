@@ -39,6 +39,7 @@ c = a + b; // c == [3, 3]
 - `ArrayList<T> & operator--()`                      
   - Pre 
   - We are going to be inventive here! The `operator--` in this case will mean removal of the last element of the `data` array. 
+  - If the `data` array is empty then it should just return an empty object and make no changes to itself
   - **Should modify the calling object**
   - For example: 
 ```
@@ -51,6 +52,7 @@ a.print();            // a == [1]
 - `ArrayList<T> operator--(int)`                        
   - Post
   - Same as the `operator--` description as above, this time just as the post instead of the pre. 
+  - If the `data` array is empty then it should just return an empty object and make no changes to itself
   - **Should modify the calling object**
   - For example: 
 ```
