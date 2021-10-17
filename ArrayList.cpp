@@ -1,5 +1,5 @@
 #include "./ArrayList.h"
-  
+
 template <class U>
 ostream& operator<<(ostream & os, ArrayList<U> a) {
     os << "[";
@@ -102,45 +102,45 @@ void ArrayList<T>::print() const {
 
 template <class T>
 bool ArrayList<T>::operator!=(const ArrayList<T> & rhs) const {
-	return false;
+    return false;
 }
 
 template <class T>
 ArrayList<T> ArrayList<T>::operator+(T val) const {
-	return *this;
+    return *this;
 }
 
 template <class T>
 ArrayList<T> ArrayList<T>::operator+(const ArrayList<T> & rhs) const {
-	return *this;
+    return *this;
 }
-  
+
 template <class T>
 ArrayList<T> & ArrayList<T>::operator--() {
-	return *this;
+    return *this;
 }
 
 template <class T>
 ArrayList<T> ArrayList<T>::operator--(int) {
-	return *this;
+    return *this;
 }
-  
+
 template <class T>
 void ArrayList<T>::operator+=(T val) {
-	return;
+    return;
 }
 
 template <class T>
 void ArrayList<T>::operator+=(const ArrayList<T> & rhs) {
-	return;
+    return;
 }
 
-template <class T>  
+template <class T>
 ArrayList<T> ArrayList<T>::operator*(int val) const {
-	return *this;
+    return *this;
 }
 
 template <class T>
 ArrayList<T> ArrayList<T>::operator/(int val) const {
-	return *this;
+    return *this;
 }
