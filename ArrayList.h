@@ -33,8 +33,8 @@ class ArrayList {
         void operator+=(T); 
         void operator+=(const ArrayList<T> &);
   
-        ArrayList<T> operator*(T) const; 
-        ArrayList<T> operator/(T) const;
+        ArrayList<T> operator*(int) const; 
+        ArrayList<T> operator/(int) const;
 
  private:
         T *data;
