@@ -2,10 +2,11 @@ include "./ArrayList.h"
   
 template <class U>
 ostream& operator<<(ostream & os, ArrayList<U> a) {
+    os << "[";
     for (int i = 0; i < a.getSize(); i++) {
         os << a.getData(i) << " ";
     }
-    os << "\n";
+    os << "]";
     return os;
 }
 
