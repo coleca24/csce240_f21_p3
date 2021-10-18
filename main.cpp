@@ -24,29 +24,29 @@ int main(int argc, char **argv) {
   std::cout << "Your output: \n";
   c_ret = c + 2;
   std::cout << "c: " << c << " c_ret: " << c_ret << "\n"; 
-  std::cout << "Correct output: \nc: [1 1] c_ret: [1 1 2] \n";
+  std::cout << "Correct output: \nc: [1 1] c_ret: [3 3] \n";
   
   std::cout << "----\nTesting operator+(T) \n";
   std::cout << "Your output: \n";
   d_ret = d + 'a';
   std::cout << "d: " << d << " d_ret: " << d_ret << "\n"; 
-  std::cout << "Correct output: \nd: [] d_ret: [a] \n";
+  std::cout << "Correct output: \nd: [] d_ret: [] \n";
   
   
   // ------------Testing Operator+(ArrayList<T>)-----------------
-  ArrayList<int> e(2,1), e2(3,2), e_ret; 
+  ArrayList<int> e(2,1), e2(2,2), e_ret; 
   ArrayList<char> f, f2(1,'a'), f_ret;
   std::cout << "----\nTesting operator+(ArrayList<T>) \n";
   std::cout << "Your output: \n";
   e_ret = e + e2;
   std::cout << "e: " << e << " e2: " << e2 << " e_ret: " << e_ret << "\n"; 
-  std::cout << "Correct output: \ne: [1 1] e2: [2 2 2] e_ret: [1 1 2 2 2] \n";
+  std::cout << "Correct output: \ne: [1 1] e2: [2 2] e_ret: [3 3] \n";
   
   std::cout << "----\nTesting operator+(ArrayList<T>) \n";
   std::cout << "Your output: \n";
   f_ret = f + f2;
   std::cout << "f: " << f << " f2: " << f2 << " f_ret: " << f_ret << "\n"; 
-  std::cout << "Correct output: \nf: [] f2: [a] f_ret: [a] \n";
+  std::cout << "Correct output: \nf: [] f2: [a] f_ret: [] \n";
   
   // ------------Testing Operator--()-----------------
   ArrayList<int> g(2,1), g_ret;
