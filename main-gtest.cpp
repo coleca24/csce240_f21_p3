@@ -98,7 +98,7 @@ TEST(Project3, test_operator_plusEqualT) {
 // Testing void operator+=(const ArrayList<T> &);
 TEST(Project3, test_operator_plusEqualArrayList) {
 	 ArrayList<int> c(2,1), c2(2,2), c_ret; 
-	 c_ret = c + 1;
+	 c_ret = c + c2;
 	 std::cout << "Test: c_ret = c + c2 where c_ret = [] and c = [1,1] and c2 = [2,2]\n";
      EXPECT_EQ(c_ret.getSize(), 4) << "c_ret incorrect length"; 
      EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
