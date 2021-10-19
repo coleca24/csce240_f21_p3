@@ -80,40 +80,29 @@ TEST(Project3, test_operator_post) {
   
 // Testing void operator+=(T); 
 TEST(Project3, test_operator_plusEqualT) {
-	 ArrayList<int> c(2,1), c_ret; 
-	 c_ret = c + 1;
-	 std::cout << "Test: c_ret = c + 1 where c_ret = [] and c = [1,1]\n";
-     EXPECT_EQ(c_ret.getSize(), 3) << "c_ret incorrect length"; 
+	 ArrayList<int> c(2,1),; 
+	 c += 1;
+	 std::cout << "Test: c = [1,1] += 1\n";
      EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
-     for (int i = 0; i < 3; i++) {
-          EXPECT_EQ(c_ret[i], 1) << "Element in c_ret at " << i
-               << " differs (should be 1)";
-     }
      for (int i = 0; i < 2; i++) {
-          EXPECT_EQ(c[i], 1) << "Element in c at " << i
-               << " differs (should be 1)";
+          EXPECT_EQ(c[i], 2) << "Element in c at " << i
+               << " differs (should be 2)";
      }
 }
 
 // Testing void operator+=(const ArrayList<T> &);
 TEST(Project3, test_operator_plusEqualArrayList) {
-	 ArrayList<int> c(2,1), c2(2,2), c_ret; 
-	 c_ret = c + c2;
-	 std::cout << "Test: c_ret = c + c2 where c_ret = [] and c = [1,1] and c2 = [2,2]\n";
-     EXPECT_EQ(c_ret.getSize(), 4) << "c_ret incorrect length"; 
+	 ArrayList<int> c(2,1), c2(2,2); 
+	 c += c2;
+	 std::cout << "Test: c += c2 where c = [1,1] and c2 = [2,2]\n";
      EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
      EXPECT_EQ(c2.getSize(), 2) << "c incorrect length"; 
-     int testArray[4] = {1,1,2,2};
-     for (int i = 0; i < 4; i++) {
-          EXPECT_EQ(c_ret[i], testArray[i]) << "Element in c_ret at " << i
-               << " differs (should be "<< testArray[i] << ")";
+     for (int i = 0; i < 2; i++) {
+          EXPECT_EQ(c[i], 3) << "Element in c at " << i
+               << " differs (should be 3)";
      }
      for (int i = 0; i < 2; i++) {
-          EXPECT_EQ(c[i], 1) << "Element in c at " << i
-               << " differs (should be 1)";
-     }
-     for (int i = 0; i < 2; i++) {
-          EXPECT_EQ(c2[i], 1) << "Element in c2 at " << i
+          EXPECT_EQ(c2[i], 2) << "Element in c2 at " << i
                << " differs (should be 2)";
      }
 }
