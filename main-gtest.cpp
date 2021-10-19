@@ -83,10 +83,10 @@ TEST(Project3, test_operator_plusEqualT) {
 	 ArrayList<int> c(2,1); 
 	 c += 1;
 	 std::cout << "Test: c = [1,1] += 1\n";
-     EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
-     for (int i = 0; i < 2; i++) {
-          EXPECT_EQ(c[i], 2) << "Element in c at " << i
-               << " differs (should be 2)";
+     EXPECT_EQ(c.getSize(), 3) << "c incorrect length"; 
+     for (int i = 0; i < 3; i++) {
+          EXPECT_EQ(c[i], 1) << "Element in c at " << i
+               << " differs (should be 1)";
      }
 }
 
@@ -95,11 +95,16 @@ TEST(Project3, test_operator_plusEqualArrayList) {
 	 ArrayList<int> c(2,1), c2(2,2); 
 	 c += c2;
 	 std::cout << "Test: c += c2 where c = [1,1] and c2 = [2,2]\n";
-     EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
+     EXPECT_EQ(c.getSize(), 4) << "c incorrect length"; 
      EXPECT_EQ(c2.getSize(), 2) << "c2 incorrect length"; 
-     for (int i = 0; i < 2; i++) {
-          EXPECT_EQ(c[i], 3) << "Element in c at " << i
-               << " differs (should be 3)";
+     for (int i = 0; i < 4; i++) {
+	  if ( i <= 1 ) {
+         	 EXPECT_EQ(c[i], 1) << "Element in c at " << i
+               << " differs (should be 1)";
+	  } else {
+		  EXPECT_EQ(c[i], 2) << "Element in c at " << i
+               << " differs (should be 2)";
+	  }
      }
      for (int i = 0; i < 2; i++) {
           EXPECT_EQ(c2[i], 2) << "Element in c2 at " << i
