@@ -96,7 +96,7 @@ TEST(Project3, test_operator_plusEqualArrayList) {
 	 c += c2;
 	 std::cout << "Test: c += c2 where c = [1,1] and c2 = [2,2]\n";
      EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
-     EXPECT_EQ(c2.getSize(), 2) << "c incorrect length"; 
+     EXPECT_EQ(c2.getSize(), 2) << "c2 incorrect length"; 
      for (int i = 0; i < 2; i++) {
           EXPECT_EQ(c[i], 3) << "Element in c at " << i
                << " differs (should be 3)";
