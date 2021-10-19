@@ -80,7 +80,7 @@ TEST(Project3, test_operator_post) {
   
 // Testing void operator+=(T); 
 TEST(Project3, test_operator_plusEqualT) {
-	 ArrayList<int> c(2,1),; 
+	 ArrayList<int> c(2,1); 
 	 c += 1;
 	 std::cout << "Test: c = [1,1] += 1\n";
      EXPECT_EQ(c.getSize(), 2) << "c incorrect length"; 
