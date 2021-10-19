@@ -83,8 +83,8 @@ a += b;                         // a == [1,1,2,2]
   - **Should not modify the calling object**
   - For example: 
 ```
-ArrayList<int> a(2,1), c;     // a == [1,1]
-c = a*2;                      // c == [1,1,1,1]
+ArrayList<int> a(2,1), c;     // a == [1,2]
+c = a*2;                      // c == [1,2,1,2]
 ```
 - `ArrayList<T> operator/(int) const`                
   - This one will be a little different as well. It will also take in an `int` and return an object that has the corresponding fraction (dictated by the `int` passed in) of the calling object's `data` array. 
