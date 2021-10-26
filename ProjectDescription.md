@@ -1,5 +1,5 @@
 # Project 3 CSCE 240 Fall 2021 (50 points)
-Due 10/28/21 at Midnight
+Due 10/31/21 at Midnight
 
 In this assignment, you will be extending the ArrayList object that we have been creating in class with some more operators overloads. You will start from the templated ArrayList that we created together in class. Remember that the T is the data type. 
   
